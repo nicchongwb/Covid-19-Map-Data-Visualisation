@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block contentblock %}
+    <h1>Upload Dataset</h1>
+    <hr>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="datafile" id="datafile" required>
+                <label class="custom-file-label" for="datafile">Select File...</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit File</button>
+    </form>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <button type="submit" class="btn btn-primary" style="margin:inherit;">Output Results</button>
+    </form>
+{% endblock %}
+{% if content %}
+{% block tableblock %}
+    {{ content | safe }}
+
+    <!-- selector appears here after file has been uploaded -->
+    {% if columns and len != None %}
+    <div class="graph-viewer">
+        <h3>View graph</h3>
+        <p><small><em>Select up to 3 different y-columns to display in graph!</em></small></p>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="colY1">Y-axis selector 1:</label>
+                <select id="colY1" name="pickY1" class="columnNamePicker" method="GET" action="/">
+                {% for i in range(0, len) %}
+                    <option value="{{ columns[i] }}">{{ columns[i] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="colY2">Y-axis selector 2:</label>
+                <select id="colY2" name="pickY1" class="columnNamePicker" method="GET" action="/">
+                {% for i in range(0, len) %}
+                    <option value="{{ columns[i] }}">{{ columns[i] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="colY3">Y-axis selector 3:</label>
+                <select id="colY3" name="pickY1" class="columnNamePicker" method="GET" action="/">
+                {% for i in range(0, len) %}
+                    <option value="{{ columns[i] }}">{{ columns[i] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="margin:inherit;">Update Graph</button>
+                <!-- Shows currently displayed columns-->
+                <p><small>Currently displayed column: <b class="text-info">{{ ycol }}</b></small></p>
+            </div>
+        </form>
+        {{ graph | safe }}
+    </div>
+    {% endif %}
+{% endblock %}
+{% endif %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% if graph %}
+{% block graphblock %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            {{ map | safe }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ graph1 | safe }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ graph2 | safe }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ graph3 | safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% endif %}

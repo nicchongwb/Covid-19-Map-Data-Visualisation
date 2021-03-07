@@ -1,0 +1,62 @@
+/* layout styles */
+header{
+    margin-bottom: 0.5em;
+}
+form{
+    display: inline;
+}
+.col-sm{
+    flex-grow: unset;
+    padding: 5px;
+    max-width: unset;
+}
+.row{
+    flex-wrap: unset;
+}
+.bk-root{
+    border: 1px solid black;
+}
+div.container{
+    margin-left: unset;
+}
+/* upload.html output table styles */
+div.tableWrapper{
+    width:100%;
+    overflow-x: scroll;
+}
+div.dataTables_wrapper{
+    width: 95%;
+    margin: auto;
+    font-size:15px;
+    margin-top:1%;
+    border-top:2px solid black;
+    padding:1%;
+}
+div.dataTables_wrapper table,
+div.dataTables_wrapper table *{
+    table-layout:fixed;
+    border: hidden;
+    text-align:left;
+}
+div.dataTables_wrapper thead tr th{
+    width:180px;
+    padding:0 10px;
+    border-bottom: 2px solid black;
+    overflow:hidden;
+}
+
+/* upload.html graph styles */
+.graph-viewer{
+    width:95%;
+    margin:auto;
+    padding:1%;
+}
+
+.graph-viewer .bk-root{
+    left: 0%;
+    width: 95%;
+    height: 80%;
+    padding: 1%;
+    margin: 1%;
+    overflow-x: auto;
+}

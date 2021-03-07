@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block contentblock %}
+    <h1>Export Dataset</h1>
+    <form action="/export" method="post">
+        <button type="submit" class="btn btn-primary" name="export_file" value="export_file">Export Excel</button>
+    </form>
+{% endblock %}
+{% block tableblock %}
+{{ content | safe }}
+{% endblock %}
