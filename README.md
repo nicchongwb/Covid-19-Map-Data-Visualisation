@@ -1,4 +1,5 @@
-# ICT1002_Project
+# Covid Map Mercator Projection
+Simple map data visualisation application written in Python Flask. Takes in data set of COVID cases with geographical information and plot on a map of Singapore.
 
 ## Installation
 
@@ -33,7 +34,6 @@ pip install pandas-bokeh
 conda install -c patrikhlobil pandas-bokeh
 ```
 
-<<<<<<< HEAD
 With that, we should be able to run the program now.
 =======
 Following that, we will need the pandas-bokeh dependency that handles the plotting of interactive graphs:
@@ -66,4 +66,3 @@ flask run
 ```
 
 Proceed to your web browser and type in localhost:5000 to access the web application.
->>>>>>> 548c14d0827045bf6c2d2fe39a4c1671990dd8ab
